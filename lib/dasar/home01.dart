@@ -7,21 +7,52 @@ class Home01 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Container'),
+        title: const Text('Flexible | Column | Row'),
       ),
-      body: Center(
-          child: Container(
-        color: Colors.yellow,
-        height: 100,
-        width: 200,
-        child: const Text('Container Widget'),
-        alignment: Alignment.center,
-        transform: Matrix4.rotationZ(0.2),
-      )),
-      bottomNavigationBar: BottomNavigationBar(items: const [
-        BottomNavigationBarItem(icon: Icon(Icons.home), label: 'home'),
-        BottomNavigationBarItem(icon: Icon(Icons.person), label: 'profile'),
-      ]),
+      body: Column(
+        children: [
+          Flexible(
+            flex: 2,
+            child: Container(
+              color: Colors.green,
+            ),
+          ),
+          Flexible(
+            flex: 3,
+            child: Container(
+              color: Colors.blue,
+            ),
+          ),
+          Flexible(
+            flex: 1,
+            child: Container(
+              color: Colors.red,
+              child: Row(
+                children: [
+                  Flexible(
+                    flex: 1,
+                    child: Container(
+                      color: Colors.white,
+                    ),
+                  ),
+                  Flexible(
+                    flex: 1,
+                    child: Container(
+                      color: Colors.black,
+                    ),
+                  ),
+                  Flexible(
+                    flex: 1,
+                    child: Container(
+                      color: Colors.yellow,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
